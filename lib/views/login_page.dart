@@ -1,5 +1,6 @@
 import 'package:bcrypt/bcrypt.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tracker_admin/views/home_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -62,12 +63,14 @@ class _LoginPageState extends State<LoginPage> {
                         if (_formKey.currentState!.validate()) {
                           const hashed = '\$2a\$10\$lOH1X4GUuewLxVYylQV4WuzCcBN9KphOaIJ/O6xx4UxGfh9UDKcAa';
                           if (_userNameController.text == 'admin' && BCrypt.checkpw(_passwordController.text, hashed)) {
+                            SharedPreferences.getInstance().then((sp) => sp.setBool('authenticated', true));
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
                                 builder: (c) => const HomePage(),
                               ),
                             );
                           } else {
+                            SharedPreferences.getInstance().then((sp) => sp.setBool('authenticated', false));
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text("Username or Password is incorrect!"),
