@@ -14,8 +14,10 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           actions: [
             IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.chat),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/add_alert');
+              },
+              icon: const Icon(Icons.add_alert),
             ),
           ],
           bottom: const TabBar(

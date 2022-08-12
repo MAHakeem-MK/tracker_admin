@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/database.dart';
 import 'package:intl/intl.dart';
 import 'package:tracker_admin/models/user_barcode.dart';
-import 'package:tracker_admin/models/user_location.dart';
+
 
 class BarcodesPage extends StatelessWidget {
   const BarcodesPage({Key? key}) : super(key: key);

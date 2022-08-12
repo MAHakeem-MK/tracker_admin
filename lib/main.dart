@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tracker_admin/views/login_page.dart';
 
+import 'views/add_alert_page.dart';
 import 'views/home_page.dart';
 import 'firebase_options.dart';
 
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
           routes: {
             '/login' : (context) => const LoginPage(),
             '/home' : (context) => const HomePage(), 
+            '/add_alert' :(context) => const AddAlertPage(),
           },
         );
       }
