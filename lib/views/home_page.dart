@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tracker_admin/views/barcodes_page.dart';
 
 import 'location_history_page.dart';
 
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
         body: const TabBarView(
           children: [
             LocationHistoryPage(),
-            Icon(Icons.qr_code),
+            BarcodesPage(),
           ],
         ),
       ),
